@@ -1,0 +1,7 @@
+target/
+.claude/
+.idea/
+.vscode/
+*.iml
+CLAUDE.md
+docs/superpowers/

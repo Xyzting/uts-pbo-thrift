@@ -1,0 +1,14 @@
+[
+  {
+    "type": "Admin",
+    "username": "admin",
+    "password": "admin123",
+    "namaLengkap": "Admin Toko"
+  },
+  {
+    "type": "Kasir",
+    "username": "kasir",
+    "password": "kasir123",
+    "namaLengkap": "Kasir Satu"
+  }
+]

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="12" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.controller.InventoryController">
+    <padding><Insets top="0" right="0" bottom="0" left="0" /></padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <TextField fx:id="searchField" promptText="🔍 Cari nama / brand / kode..." prefWidth="280" />
+        <ComboBox fx:id="kategoriFilter" promptText="Semua Kategori" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button onAction="#handleTambah" styleClass="primary-button" text="+ Tambah Barang" />
+    </HBox>
+
+    <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colKode" prefWidth="80" text="Kode" />
+            <TableColumn fx:id="colNama" prefWidth="200" text="Nama" />
+            <TableColumn fx:id="colKategori" prefWidth="100" text="Kategori" />
+            <TableColumn fx:id="colBrand" prefWidth="90" text="Brand" />
+            <TableColumn fx:id="colUkuran" prefWidth="70" text="Ukuran" />
+            <TableColumn fx:id="colKondisi" prefWidth="100" text="Kondisi" />
+            <TableColumn fx:id="colHargaBeli" prefWidth="100" text="Harga Beli" />
+            <TableColumn fx:id="colHargaJual" prefWidth="100" text="Harga Jual" />
+            <TableColumn fx:id="colStok" prefWidth="60" text="Stok" />
+            <TableColumn fx:id="colAksi" prefWidth="140" text="Aksi" />
+        </columns>
+    </TableView>
+</VBox>

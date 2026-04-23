@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane hgap="14" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.example.controller.KasirController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" />
+        <ColumnConstraints minWidth="360" prefWidth="360" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS" />
+    </rowConstraints>
+
+    <VBox spacing="10" GridPane.rowIndex="0" GridPane.columnIndex="0">
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <TextField fx:id="searchField" prefWidth="260" promptText="🔍 Cari barang..." />
+            <ComboBox fx:id="kategoriFilter" promptText="Semua Kategori" />
+        </HBox>
+        <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="edge-to-edge">
+            <FlowPane fx:id="produkPane" hgap="12" vgap="12" prefWrapLength="620">
+                <padding><Insets top="4" right="4" bottom="4" left="4" /></padding>
+            </FlowPane>
+        </ScrollPane>
+    </VBox>
+
+    <VBox spacing="10" styleClass="cart-panel" GridPane.rowIndex="0" GridPane.columnIndex="1">
+        <Label styleClass="login-title" text="🛒 Keranjang" />
+        <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="edge-to-edge">
+            <VBox fx:id="cartList" spacing="8" />
+        </ScrollPane>
+
+        <GridPane hgap="8" vgap="6">
+            <Label text="Subtotal" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <Label fx:id="subtotalLabel" text="Rp 0" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+            <Label text="Diskon" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+            <HBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                <TextField fx:id="diskonField" prefWidth="100" promptText="0" />
+                <ComboBox fx:id="diskonModeBox" prefWidth="70" />
+            </HBox>
+
+            <Label text="Total" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+            <Label fx:id="totalLabel" styleClass="summary-card-value" text="Rp 0" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+            <Label text="Metode" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+            <ComboBox fx:id="metodeBox" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+            <Label text="Bayar" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+            <TextField fx:id="bayarField" promptText="0" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+
+            <Label text="Kembalian" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+            <Label fx:id="kembalianLabel" text="Rp 0" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+        </GridPane>
+
+        <Label fx:id="errorLabel" styleClass="error-text" wrapText="true" />
+
+        <Button fx:id="checkoutButton" maxWidth="Infinity" onAction="#handleCheckout"
+                styleClass="primary-button" text="CHECKOUT" />
+    </VBox>
+</GridPane>

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "TRX-20260418-001",
+    "tanggal": "2026-04-18T02:30:11.6105082",
+    "kasirUsername": "admin",
+    "items": [
+      {
+        "kodeBarang": "BR-001",
+        "namaBarang": "Kemeja Flanel Kotak",
+        "hargaBeli": 45000.0,
+        "hargaJual": 95000.0,
+        "qty": 1,
+        "subtotal": 95000.0
+      },
+      {
+        "kodeBarang": "BR-002",
+        "namaBarang": "Jeans Skinny Dark",
+        "hargaBeli": 40000.0,
+        "hargaJual": 85000.0,
+        "qty": 1,
+        "subtotal": 85000.0
+      }
+    ],
+    "diskon": 0.0,
+    "diskonPersen": true,
+    "subtotal": 180000.0,
+    "total": 180000.0,
+    "bayar": 0.0,
+    "kembalian": 0.0,
+    "metodeBayar": "QRIS"
+  }
+]

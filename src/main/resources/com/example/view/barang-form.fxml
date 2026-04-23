@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="12" stylesheets="@../css/app.css"
+      xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.controller.BarangFormController"
+      prefWidth="520">
+    <padding><Insets top="20" right="20" bottom="20" left="20" /></padding>
+
+    <Label fx:id="titleLabel" styleClass="login-title" text="Tambah Barang" />
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Kode" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <TextField fx:id="kodeField" editable="false" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+        <Label text="Nama" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <TextField fx:id="namaField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+        <Label text="Kategori" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <ComboBox fx:id="kategoriBox" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+        <Label text="Brand" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <TextField fx:id="brandField" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+        <Label text="Ukuran" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+        <ComboBox fx:id="ukuranBox" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+
+        <Label text="Kondisi" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+        <ComboBox fx:id="kondisiBox" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+
+        <Label text="Harga Beli" GridPane.rowIndex="6" GridPane.columnIndex="0" />
+        <TextField fx:id="hargaBeliField" promptText="0" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+
+        <Label text="Harga Jual" GridPane.rowIndex="7" GridPane.columnIndex="0" />
+        <TextField fx:id="hargaJualField" promptText="0" GridPane.rowIndex="7" GridPane.columnIndex="1" />
+
+        <Label text="Stok" GridPane.rowIndex="8" GridPane.columnIndex="0" />
+        <Spinner fx:id="stokSpinner" editable="true" GridPane.rowIndex="8" GridPane.columnIndex="1" />
+    </GridPane>
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <ImageView fx:id="previewImage" fitHeight="100" fitWidth="100" preserveRatio="true" />
+        <VBox spacing="6">
+            <Label fx:id="fileNameLabel" text="Belum ada gambar" />
+            <Button onAction="#pilihGambar" styleClass="ghost-button" text="Pilih Foto..." />
+        </VBox>
+    </HBox>
+
+    <Label fx:id="errorLabel" styleClass="error-text" wrapText="true" />
+
+    <HBox spacing="10">
+        <Region HBox.hgrow="ALWAYS" />
+        <Button onAction="#handleBatal" styleClass="ghost-button" text="Batal" />
+        <Button onAction="#handleSimpan" styleClass="primary-button" text="Simpan" />
+    </HBox>
+</VBox>
